@@ -1,26 +1,28 @@
 #include<stdio.h>
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    int arr[n],i,f=0;
-    for(i=0;i<n;i++)
-    scanf("%d",&arr[i]);
+    int n,i; 
+    scanf("%d",&n); 
+    int a[n];
     for(i=0;i<n;i++)
     {
-        if(arr[i]%2==0)
-        {
-            if(i%2==0)
-            f=1;
-            else
-            {
-                f=0;
-                break; 
-            }
-        }
+        scanf("%d",&a[i]);
     }
-    if(f==1)
+    int strictly_even=1;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]%2==0)
+        {
+            if(i%2==1) 
+            {
+                strictly_even=0;
+                break;
+            }
+        } 
+    } 
+    if(strictly_even==1) 
     printf("True");
-    else 
+    else
     printf("False");
+    
 }
